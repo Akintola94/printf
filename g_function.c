@@ -1,9 +1,10 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * g_function - specifies function
  * @con_spec: conversion specifiers
- * @args: arguments
+ * @pa: arguments
  * Return: char print
  */
 int get_function(char con_spec, va_list pa)
@@ -24,8 +25,11 @@ int get_function(char con_spec, va_list pa)
 	while (spec[j].specifiers)
 	{
 		if (con_spec == spec[j].specifiers)
-			char_print += spec[j].f(args);
-			j++;
+		{
+			char_print += spec[j].f(pa);
+			break;
+		}
+		j++;
 	}
 
 	if (char_print == 0)
