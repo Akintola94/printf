@@ -7,5 +7,6 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int get_function(char s, va_list args);
 
 #endif
