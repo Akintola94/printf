@@ -1,12 +1,12 @@
 #include "main.h"
 #include <stdarg.h>
 
-/**
- * g_function - specifies function
- * @con_spec: conversion specifiers
- * @pa: arguments
- * Return: char print
- */
+typedef struct
+{
+	char specifiers;
+	int (*f)(va_list);
+} specifiers_t; 
+
 int get_function(char con_spec, va_list pa)
 {
 	int j = 0;
