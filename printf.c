@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int j = 0, char_count = 0, char_print;
+	int j = 0, total = 0, char_print;
 	va_list args;
 
 	va_start(args, format);
@@ -25,24 +25,24 @@ int _printf(const char *format, ...)
 		{
 			if (!format[j + 1] || (format[j + 1] == ' ' && !format[j + 2]))
 			{
-				char_count = -1;
+				total = -1;
 				break;
 			}
 			char_print += get_function(format[j + 1], args);
 			if (char_print == 0)
-				char_count += _putchar(format[j + 1]);
+				total += _putchar(format[j + 1]);
 			if (char_print == -1)
-				char_count = -1;
+				total = -1;
 			j++;
 		}
 		else
 		{
-			(char_count == -1) ? (_putchar(format[j])) : (char_count += _putchar(format[j]));
+			(total == -1) ? (_putchar(format[j])) : (total += _putchar(format[j]));
 		}
 		j++;
-		if (char_count != -1)
-			char_count += char_print;
+		if (total != -1)
+			total += char_print;
 	}
 	va_end(args);
-	return (char_count);
+	return (total);
 }

@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
- * print_digit - prints digit
+ * print_digit - print in digit
  * @pa: argument
  * Return: numbers of char print
  */

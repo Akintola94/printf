@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 /**
- * print_char - print characters
+ * print_char - printing in characters
  * @pa : argument.
  * Return: number of print char
  */
