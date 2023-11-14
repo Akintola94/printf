@@ -24,6 +24,5 @@ int print_rev_string(va_list pa)
 		j--;
 	}
 
-	char_print--;
 	return (char_print);
 }
