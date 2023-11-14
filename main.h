@@ -5,7 +5,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct
+/**
+ * struct specifiers - structure format
+ * @specifiers: struct format
+ * @f: function
+ */
+
+typedef struct specifiers
 {
 	char specifiers;
 	int (*f)(va_list);

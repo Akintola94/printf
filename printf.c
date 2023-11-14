@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdarg.h>
 
 /**
@@ -9,9 +10,9 @@
 int _printf(const char *format, ...)
 {
 	int j = 0, char_count = 0, char_print;
-	va_list pa;
+	va_list args;
 
-	va_start(pa, format);
+	va_start(args, format);
 
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
@@ -27,7 +28,7 @@ int _printf(const char *format, ...)
 				char_count = -1;
 				break;
 			}
-			char_print += get_function(format[j + 1], pa);
+			char_print += get_function(format[j + 1], args);
 			if (char_print == 0)
 				char_count += _putchar(format[j + 1]);
 			if (char_print == -1)
@@ -42,6 +43,6 @@ int _printf(const char *format, ...)
 		if (char_count != -1)
 			char_count += char_print;
 	}
-	va_end(pa);
+	va_end(args);
 	return (char_count);
 }
